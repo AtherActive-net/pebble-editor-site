@@ -1,0 +1,36 @@
+
+
+@function breakpoint($name) {
+    @return map-get($breakpoints, $name);
+}
+
+@function theme-color($name) {
+    @return map-get($theme-colors, $name);
+}
+
+
+@mixin bg-color($name) {
+    background-color: map-get($background-light, $name);
+    @media (prefers-color-scheme: "dark") {
+        background-color: map-get($background-dark, $name);
+    }
+}
+
+@mixin color($name) {
+    color: map-get($color-light, $name);
+    @media (prefers-color-scheme: "dark") {
+        color: map-get($color-dark, $name);
+    }
+}
+
+@function padding($name) {
+    @return map-get($padding, $name);
+}
+
+@function margin($name) {
+    @return map-get($margin, $name);
+}
+
+@function weight($name) {
+    @return map-get($font-weight, $name);
+}

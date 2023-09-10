@@ -1,0 +1,23 @@
+// @import "@styles/variables.scss";
+// @import "@styles/functions.scss";
+
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+
+	@include color("text");
+}
+
+a, a>* {
+	@include color("link");
+}
+
+html,
+body {
+	font-size: $font-size;
+	font-family: $font;
+  	max-width: 100vw;
+  	overflow-x: hidden;
+	@include bg-color("primary");
+}
