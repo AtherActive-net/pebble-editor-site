@@ -1,0 +1,6 @@
+.root {
+    background: linear-gradient(theme-color("main"), theme-color("accent"));
+    background-clip: border-box;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}

@@ -1,15 +1,19 @@
 //
 // TEXT
 //
+@import url('https://fonts.googleapis.com/css2?family=Oxygen:wght@400;700&family=Titan+One&display=swap');
 
 $font: "Oxygen", sans-serif;
 $font-size: 18px;
+$font-size-mobile: 14px;
 
 $font-weight: (
     "regular" : 400,
     "bold" : 700,
     "light" : 300,
 );
+
+$header-font: "Titan One", sans-serif;
 
 //
 // BORDER
@@ -29,6 +33,7 @@ $breakpoints: (
 	"lg": 992px,
 	"xl": 1200px,
 	"xxl": 1400px,
+    "max-width": 1920px
 );
 
 //

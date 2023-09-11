@@ -34,3 +34,18 @@
 @function weight($name) {
     @return map-get($font-weight, $name);
 }
+
+@function size($name) {
+    @return map-get($heading-sizes, $name);
+}
+
+@mixin bg-gradient() {
+    background: hsla(207, 43%, 4%, 1);
+
+    background: radial-gradient(circle, hsla(207, 43%, 4%, 1) 0%, hsla(208, 42%, 6%, 1) 100%);
+    
+    background: -moz-radial-gradient(circle, hsla(207, 43%, 4%, 1) 0%, hsla(208, 42%, 6%, 1) 100%);
+    
+    background: -webkit-radial-gradient(circle, hsla(207, 43%, 4%, 1) 0%, hsla(208, 42%, 6%, 1) 100%);
+    
+}

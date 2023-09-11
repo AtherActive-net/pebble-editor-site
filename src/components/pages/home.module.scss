@@ -1,0 +1,165 @@
+.root {
+    display: grid;
+    grid-template: 'nav'
+                    'title'
+                    'signup'
+                    'banner'
+                    'info'
+                    'socials';
+
+    grid-template-columns: 1fr;
+    grid-template-rows: 5rem min-content min-content min-content min-content min-content;
+    grid-gap: padding("lg");
+    padding: padding("lg");
+    min-height: 100vh;
+
+    @media(min-width: breakpoint("xl")) {
+        grid-template: 'nav nav nav nav nav'
+        'title title title title title'
+        'info info info socials signup';
+
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 5rem min-content min-content min-content min-content;
+    }
+
+    
+}
+
+.gridItem {
+    @include bg-color("secondary");
+    padding: padding("lg");
+    border-radius: 1rem;
+}
+
+.nav {
+    composes: gridItem;
+    grid-area: nav;
+}
+
+.titleSection {
+    composes: gridItem;
+    grid-area: title;
+    display: flex;
+    flex-direction: column;
+    gap: padding("lg");
+
+    @media (min-width: breakpoint("lg")) {
+        flex-direction: row;
+    }
+}
+
+.titleLeft {
+    display: flex;
+    flex-direction: column;
+    gap: padding("lg");
+}
+
+.titleRight {
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
+    font-size: size("h2");
+    line-height: 3rem;
+
+    display: grid;
+    grid-template-columns: min-content;
+    column-gap: padding("sm");
+
+    grid-template: 'title1'
+                'title2';
+
+    @media(min-width: breakpoint("lg")) {
+        grid-template: 'title1'
+        'title2';
+
+        font-size: size("h1");
+        line-height: 3.5rem;
+    }
+}
+
+.description {
+    text-align: justify;
+    line-height: 2rem;
+    max-width: 35rem;
+}
+
+.siteType {
+    display: inline-block;
+    position: relative;
+    min-width: 15rem;
+    overflow-y: hidden;
+    grid-area: siteType;
+    min-height: 3rem;
+
+    div {
+        animation-iteration-count: infinite;
+    }
+
+    div:nth-child(1) {
+        animation: SiteTypeAnim 8s ease-in-out infinite;
+    }
+
+    div:nth-child(2) {
+        animation: SiteTypeAnim 8s ease-in-out infinite;
+        animation-delay: 2s;
+    }
+
+    div:nth-child(3) {
+        animation: SiteTypeAnim 8s ease-in-out infinite;
+        animation-delay: 4s;
+    }
+
+    div:nth-child(4) {
+        animation: SiteTypeAnim 8s ease-in-out infinite;
+        animation-delay: 6s;
+    }
+
+    @media(min-width: breakpoint("lg")) {
+        min-height: 4rem;
+    }
+
+}
+
+.siteOption {
+    position: absolute;
+    transform: translateY(-100%);
+}
+
+// create an animation where 4 items drop in one after another.
+// each item is its own child of the parent container.
+@keyframes SiteTypeAnim {
+    0% {
+        transform: translateY(-100%);
+        display: block;
+    }
+    10% {
+        transform: translateY(0%);
+    }
+    20% {
+        transform: translateY(0%);
+    }
+
+    30% {
+        transform: translateY(100%);
+        
+    }
+    31% {
+        display: none;
+    }
+    100% {
+        transform: translateY(100%);
+    }
+}
+
+.title1 {
+    grid-area: title1;
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.title2 {
+    grid-area: title2;
+}
